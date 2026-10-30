@@ -907,9 +907,9 @@ main > section > .container {
   transition: opacity .3s ease, transform .3s ease;
   backdrop-filter: blur(12px);
 }
-.scroll-cue i { font-size: 18px; animation: cue-down 1.2s ease-in-out infinite; }
+.scroll-cue i { font-size: 18px; animation: cue-sideways 1.2s ease-in-out infinite; }
 .scroll-cue.is-hidden { opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
-@keyframes cue-down { 50% { transform: translateY(4px); } }
+@keyframes cue-sideways { 50% { transform: translateX(4px); } }
 
 .about { position: relative; }
 .art-note {
