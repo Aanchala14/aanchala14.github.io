@@ -766,17 +766,21 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
   inset: -5%;
   pointer-events: none;
   background: url("../images/backgrounds/watercolour-blue.jpg") center / cover no-repeat;
-  opacity: .42;
-  transform: scale(1.06) translate3d(-1%, -1%, 0);
-  animation: watercolour-drift 24s ease-in-out infinite alternate;
+  opacity: .72;
+  filter: saturate(1.18) contrast(1.05);
+  transform: scale(1.16) translate3d(-1%, calc(-3% + var(--wave-scroll, 0px)), 0);
+  animation: watercolour-breathe 18s ease-in-out infinite alternate;
+  will-change: transform;
 }
 .watercolour-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(247,251,255,.22), rgba(247,251,255,.55));
+  background: linear-gradient(180deg, rgba(237,248,251,.03), rgba(237,248,251,.18));
 }
-@keyframes watercolour-drift { to { transform: scale(1.1) translate3d(1.2%, 1%, 0); } }
+@keyframes watercolour-breathe {
+  to { filter: saturate(1.28) contrast(1.08); }
+}
 
 .navbar, .navbar[class*="headroom--not-top"] {
   background: rgba(247, 251, 255, .82);
@@ -787,7 +791,7 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
 .eyebrow, .project-kicker, .credential-type, .reference-type { color: var(--rust); }
 .accent-text { color: var(--rust); }
 .full-screen {
-  background: radial-gradient(circle at 83% 22%, rgba(230,226,121,.28), transparent 28%), linear-gradient(180deg, rgba(247,251,255,.34), rgba(247,251,255,.68));
+  background: radial-gradient(circle at 83% 22%, rgba(230,226,121,.32), transparent 28%), linear-gradient(180deg, rgba(247,251,255,.08), rgba(247,251,255,.32));
 }
 .orbit { border-color: rgba(82, 125, 202, .3); }
 .data-card {
@@ -800,10 +804,10 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
   border-color: rgba(82,125,202,.28);
   background: rgba(255,255,255,.68);
 }
-.projects, .references { background: rgba(247,251,255,.76); backdrop-filter: blur(4px); }
-.publication, .expertise, .resume, .contact { background: rgba(255,255,255,.62); }
+.projects, .references { background: rgba(231,245,250,.42); backdrop-filter: blur(2px); }
+.publication, .expertise, .resume, .contact { background: rgba(255,255,255,.28); }
 .featured-project, .project-card, .publication-card, .reference-card, .education-card {
-  background: rgba(255,255,255,.86);
+  background: rgba(255,255,255,.8);
   box-shadow: 0 16px 48px rgba(23,50,74,.08);
 }
 .featured-project { border-left-color: var(--rust); }
@@ -838,5 +842,5 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
 .dark-mode .affiliation-row span, .dark-mode .tag-row span { color: #cfe0ff; background: rgba(82,125,202,.22); }
 
 @media (prefers-reduced-motion: reduce) {
-  .watercolour-bg { animation: none; transform: scale(1.06); }
+  .watercolour-bg { animation: none; transform: scale(1.16) translate3d(-1%, -3%, 0); }
 }
