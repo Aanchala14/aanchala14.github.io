@@ -16,7 +16,7 @@
           event.preventDefault();
         }
       });
-    });  
+    });
 
     // TOOLTIP
     $('.social-links a').tooltip();
@@ -294,6 +294,20 @@
       toggle.addEventListener('click', function() { setRunning(!running); });
       document.addEventListener('visibilitychange', function() { if (document.hidden && running) setRunning(false); });
       resetGame();
+    }
+
+    // Move the painted waves gently as the page scrolls.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let waveFrame;
+      const updateWaves = function() {
+        const travel = Math.min(window.scrollY * 0.035, 90);
+        document.documentElement.style.setProperty('--wave-scroll', travel + 'px');
+        waveFrame = null;
+      };
+      window.addEventListener('scroll', function() {
+        if (!waveFrame) waveFrame = window.requestAnimationFrame(updateWaves);
+      }, { passive: true });
+      updateWaves();
     }
 
 })(jQuery);
