@@ -33,21 +33,8 @@
     }
   }, { passive: false });
 
-  if (!reduceMotion) {
-    var frame;
-    var updateOcean = function () {
-      var progress = stage.scrollLeft / Math.max(stage.scrollWidth - stage.clientWidth, 1);
-      var surge = Math.sin(progress * Math.PI * 9);
-      document.documentElement.style.setProperty('--ocean-travel', (progress * -140) + 'px');
-      document.documentElement.style.setProperty('--ocean-lift', (surge * -22) + 'px');
-      document.documentElement.style.setProperty('--ocean-counter-lift', (surge * 12) + 'px');
-      document.documentElement.style.setProperty('--ocean-small-lift', (surge * -8) + 'px');
-      document.documentElement.style.setProperty('--ocean-roll', (surge * 1.8) + 'deg');
-      frame = null;
-    };
-    stage.addEventListener('scroll', function () {
-      if (!frame) frame = window.requestAnimationFrame(updateOcean);
-    }, { passive: true });
-    updateOcean();
-  }
+  var scrollCue = document.querySelector('.scroll-cue');
+  stage.addEventListener('scroll', function () {
+    if (scrollCue) scrollCue.classList.toggle('is-hidden', stage.scrollLeft > 40);
+  }, { passive: true });
 })(jQuery);
