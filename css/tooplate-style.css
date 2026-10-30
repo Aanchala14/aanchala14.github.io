@@ -781,12 +781,13 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
   z-index: -2;
   inset: -5%;
   pointer-events: none;
-  background: url("../images/backgrounds/watercolour-blue.jpg") center / cover no-repeat;
-  opacity: .76;
-  filter: saturate(1.22) contrast(1.07);
-  transform: scale(1.16) translate3d(-1%, calc(-3% + var(--wave-scroll, 0px)), 0);
+  background: url("../images/backgrounds/watercolour-waves-blue-v3.png") center / cover no-repeat;
+  opacity: var(--wave-opacity, .8);
+  filter: saturate(var(--wave-focus, 1.36)) contrast(1.08);
+  transform: scale(var(--wave-scale, 1.34)) translate3d(calc(-1% + var(--wave-sway, 0px)), calc(-4% + var(--wave-scroll, 0px)), 0);
   animation: watercolour-breathe 18s ease-in-out infinite alternate;
   will-change: transform;
+  transition: transform 1.15s cubic-bezier(.2,.75,.2,1), opacity 1.15s ease, filter 1.15s ease;
 }
 .watercolour-bg::after {
   content: "";
@@ -813,5 +814,221 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
 .contact-panel { background: linear-gradient(135deg, #17324a, #924b12); }
 .contact-btn { background: var(--chartreuse); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
-  .watercolour-bg { animation: none; transform: scale(1.16) translate3d(-1%, -3%, 0); }
+  .watercolour-bg { animation: none; transform: scale(1.2) translate3d(-1%, -4%, 0); }
+}
+
+/* Full-screen landscape chapters */
+html { scroll-snap-type: y mandatory; }
+main > section {
+  min-height: calc(100svh - 70px);
+  height: calc(100svh - 70px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+main > section > .container {
+  max-height: 100%;
+  overflow-y: auto;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  scrollbar-width: thin;
+}
+.section-block { padding: 0; }
+.full-screen { min-height: calc(100svh - 70px); padding: 0; }
+.contact.section-block { min-height: calc(100svh - 70px); }
+
+/* Fish navigation */
+.navbar .container { position: relative; }
+.navbar-toggler.fish-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 60px;
+  height: 46px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 8px 24px rgba(23,50,74,.1);
+}
+.fish-icon {
+  display: block;
+  width: 38px;
+  height: 24px;
+  overflow: visible;
+  transition: transform .3s ease;
+}
+.fish-body { fill: #527dca; }
+.fish-tail { fill: #94b6ef; }
+.fish-fin { fill: none; stroke: #924b12; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.fish-eye { fill: #fff; stroke: #17324a; stroke-width: 1.2; }
+.fish-smile { fill: none; stroke: #17324a; stroke-width: 1.5; stroke-linecap: round; }
+.menu-label { color: #17324a; font-size: 9px; font-weight: 700; letter-spacing: .12em; line-height: 1; text-transform: uppercase; }
+.fish-menu[aria-expanded="true"] .fish-icon { transform: translateX(-3px) rotate(-7deg); }
+.fish-menu[aria-expanded="true"] .fish-body { fill: #924b12; }
+.navbar-collapse {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 12px);
+  right: 15px;
+  width: min(280px, calc(100vw - 30px));
+  padding: 16px 20px;
+  border: 1px solid rgba(40,84,116,.18);
+  border-radius: 18px;
+  background: rgba(245,251,253,.96) !important;
+  box-shadow: 0 20px 50px rgba(23,50,74,.18);
+  backdrop-filter: blur(16px);
+}
+.navbar-nav { flex-direction: column; }
+.navbar .nav-link { padding: 8px 4px !important; }
+
+.scroll-cue {
+  position: fixed;
+  z-index: 12;
+  left: 50%;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid rgba(23,50,74,.18);
+  border-radius: 999px;
+  color: #17324a;
+  background: rgba(245,251,253,.9);
+  box-shadow: 0 12px 34px rgba(23,50,74,.15);
+  font-size: 12px;
+  font-weight: 700;
+  transform: translateX(-50%);
+  transition: opacity .3s ease, transform .3s ease;
+  backdrop-filter: blur(12px);
+}
+.scroll-cue i { font-size: 18px; animation: cue-down 1.2s ease-in-out infinite; }
+.scroll-cue.is-hidden { opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
+@keyframes cue-down { 50% { transform: translateY(4px); } }
+
+.about { position: relative; }
+.art-note {
+  position: absolute;
+  z-index: 4;
+  right: 34px;
+  bottom: 24px;
+  width: min(285px, calc(100vw - 48px));
+  padding: 14px 16px;
+  border: 1px solid rgba(23,50,74,.16);
+  border-radius: 16px;
+  background: rgba(245,251,253,.82);
+  box-shadow: 0 14px 38px rgba(23,50,74,.12);
+  backdrop-filter: blur(12px);
+}
+.art-note span {
+  display: block;
+  margin-bottom: 5px;
+  color: #924b12;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.art-note p { margin: 0; color: #17324a; font-size: 12px; line-height: 1.45; }
+
+@media (max-width: 767px) {
+  html { scroll-snap-type: y proximity; }
+  main > section, .contact.section-block { min-height: calc(100svh - 62px); height: calc(100svh - 62px); }
+  main > section > .container { padding-top: 28px; padding-bottom: 28px; }
+}
+
+/* Horizontal ocean presentation */
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { padding-top: 70px; }
+main {
+  display: flex;
+  width: 100%;
+  height: calc(100svh - 70px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+main::-webkit-scrollbar { display: none; }
+main > section,
+.contact.section-block {
+  flex: 0 0 100vw;
+  width: 100vw;
+  min-width: 100vw;
+  height: calc(100svh - 70px);
+  min-height: calc(100svh - 70px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+main > section > .container { width: 100%; }
+.footer { display: none; }
+
+/* Layered copies of the painting rise and fold like forming ocean waves. */
+.watercolour-bg {
+  inset: -9%;
+  opacity: .64;
+  transform-origin: center;
+  background-position: center top;
+  animation: diagonal-water 12s ease-in-out infinite alternate;
+  transition: none;
+  overflow: hidden;
+}
+.watercolour-bg::after { background: rgba(239,249,252,.08); }
+.paint-wave {
+  position: absolute;
+  left: -12%;
+  width: 124%;
+  height: 52%;
+  display: block;
+  background: url("../images/backgrounds/watercolour-waves-blue-v3.png") center / cover no-repeat;
+  transform-origin: 50% 100%;
+  will-change: transform;
+  filter: saturate(1.16) contrast(1.05);
+}
+.paint-wave-one {
+  bottom: -4%;
+  opacity: .9;
+  clip-path: polygon(0 30%, 9% 18%, 19% 26%, 29% 10%, 40% 22%, 51% 7%, 62% 20%, 72% 9%, 83% 23%, 92% 12%, 100% 24%, 100% 100%, 0 100%);
+  animation: diagonal-wave 10s ease-in-out infinite alternate;
+}
+.paint-wave-two {
+  bottom: 16%;
+  opacity: .52;
+  background-position: center 54%;
+  clip-path: polygon(0 36%, 11% 20%, 22% 31%, 34% 14%, 46% 29%, 57% 12%, 69% 27%, 80% 16%, 91% 29%, 100% 18%, 100% 100%, 0 100%);
+  animation: diagonal-wave 13s ease-in-out -4s infinite alternate-reverse;
+}
+.paint-wave-three {
+  bottom: 37%;
+  opacity: .28;
+  background-position: center 24%;
+  clip-path: polygon(0 38%, 13% 24%, 25% 35%, 38% 18%, 50% 32%, 64% 17%, 77% 31%, 89% 20%, 100% 33%, 100% 100%, 0 100%);
+  animation: diagonal-wave 16s ease-in-out -7s infinite alternate;
+}
+@keyframes diagonal-water {
+  from { transform: translate3d(68px, 68px, 0) scale(1.12) rotate(.4deg); filter: saturate(1.02) contrast(1.02); }
+  to { transform: translate3d(-68px, -68px, 0) scale(1.2) rotate(-.4deg); filter: saturate(1.16) contrast(1.07); }
+}
+@keyframes diagonal-wave {
+  from { transform: translate3d(78px, 72px, 0) scale(1.05) skewX(1deg); border-radius: 47% 53% 0 0 / 18% 22% 0 0; }
+  to { transform: translate3d(-78px, -72px, 0) scale(1.14) skewX(-1deg); border-radius: 55% 45% 0 0 / 28% 16% 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main { scroll-behavior: auto; }
+  .watercolour-bg, .paint-wave { animation: none; }
+  .scroll-cue i { animation: none; }
+}
+@media (max-width: 767px) {
+  body { padding-top: 62px; }
+  main { height: calc(100svh - 62px); }
+  main > section, .contact.section-block { height: calc(100svh - 62px); min-height: calc(100svh - 62px); }
+  .art-note { right: 18px; bottom: 72px; }
 }
