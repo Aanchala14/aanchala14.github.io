@@ -32,5 +32,20 @@
       if (!waveFrame) waveFrame = window.requestAnimationFrame(updateWaves);
     }, { passive: true });
     updateWaves();
+
+    // Alternate the wave depth as each landscape chapter comes into view.
+    var sections = Array.prototype.slice.call(document.querySelectorAll('main > section'));
+    var waveObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+          var index = sections.indexOf(entry.target);
+          var forward = index % 2 === 0;
+          document.documentElement.style.setProperty('--wave-scale', forward ? '1.34' : '1.12');
+          document.documentElement.style.setProperty('--wave-opacity', forward ? '.8' : '.64');
+          document.documentElement.style.setProperty('--wave-focus', forward ? '1.36' : '1.12');
+        }
+      });
+    }, { threshold: [0.55] });
+    sections.forEach(function (section) { waveObserver.observe(section); });
   }
 })(jQuery);
