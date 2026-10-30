@@ -911,6 +911,31 @@ main > section > .container {
 .scroll-cue.is-hidden { opacity: 0; transform: translate(-50%, 12px); pointer-events: none; }
 @keyframes cue-down { 50% { transform: translateY(4px); } }
 
+.about { position: relative; }
+.art-note {
+  position: absolute;
+  z-index: 4;
+  right: 34px;
+  bottom: 24px;
+  width: min(285px, calc(100vw - 48px));
+  padding: 14px 16px;
+  border: 1px solid rgba(23,50,74,.16);
+  border-radius: 16px;
+  background: rgba(245,251,253,.82);
+  box-shadow: 0 14px 38px rgba(23,50,74,.12);
+  backdrop-filter: blur(12px);
+}
+.art-note span {
+  display: block;
+  margin-bottom: 5px;
+  color: #924b12;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.art-note p { margin: 0; color: #17324a; font-size: 12px; line-height: 1.45; }
+
 @media (max-width: 767px) {
   html { scroll-snap-type: y proximity; }
   main > section, .contact.section-block { min-height: calc(100svh - 62px); height: calc(100svh - 62px); }
@@ -1005,4 +1030,5 @@ main > section > .container { width: 100%; }
   body { padding-top: 62px; }
   main { height: calc(100svh - 62px); }
   main > section, .contact.section-block { height: calc(100svh - 62px); min-height: calc(100svh - 62px); }
+  .art-note { right: 18px; bottom: 72px; }
 }
