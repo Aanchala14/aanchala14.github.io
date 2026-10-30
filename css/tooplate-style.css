@@ -781,10 +781,10 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
   z-index: -2;
   inset: -5%;
   pointer-events: none;
-  background: url("../images/backgrounds/watercolour-blue.jpg") center / cover no-repeat;
+  background: url("../images/backgrounds/watercolour-waves-v2.png") center / cover no-repeat;
   opacity: .76;
   filter: saturate(1.22) contrast(1.07);
-  transform: scale(1.16) translate3d(-1%, calc(-3% + var(--wave-scroll, 0px)), 0);
+  transform: scale(1.2) translate3d(calc(-1% + var(--wave-sway, 0px)), calc(-4% + var(--wave-scroll, 0px)), 0);
   animation: watercolour-breathe 18s ease-in-out infinite alternate;
   will-change: transform;
 }
@@ -813,5 +813,5 @@ body { position: relative; color: var(--ink); background: #edf8fb; }
 .contact-panel { background: linear-gradient(135deg, #17324a, #924b12); }
 .contact-btn { background: var(--chartreuse); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
-  .watercolour-bg { animation: none; transform: scale(1.16) translate3d(-1%, -3%, 0); }
+  .watercolour-bg { animation: none; transform: scale(1.2) translate3d(-1%, -4%, 0); }
 }
