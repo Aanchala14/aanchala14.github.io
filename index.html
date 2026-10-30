@@ -22,6 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a href="#about" class="nav-link"><span data-hover="About">About</span></a></li>
+          <li class="nav-item"><a href="#game" class="nav-link"><span data-hover="Game">Game</span></a></li>
           <li class="nav-item"><a href="#projects" class="nav-link"><span data-hover="Projects">Projects</span></a></li>
           <li class="nav-item"><a href="#publication" class="nav-link"><span data-hover="Publication">Publication</span></a></li>
           <li class="nav-item"><a href="#experience" class="nav-link"><span data-hover="Experience">Experience</span></a></li>
@@ -70,6 +71,37 @@
       </div>
     </section>
 
+    <section class="section-block game-section" id="game">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 game-intro">
+            <p class="eyebrow">Just a playful intermission</p>
+            <h2>Violet Pac-Man.</h2>
+            <p>I love the Google Doodle of Pac-Man, so this little maze runner gets a place in my portfolio too.</p>
+            <div class="game-fact"><span>Fun fact</span><strong>I have reached level 11. Next target: level 256.</strong></div>
+            <blockquote>“I wanted to make a violet Pac-Man—can you guess why? (It matches the colour theme of this site.) He’s just here to have fun running around the maze.”</blockquote>
+          </div>
+          <div class="col-lg-7">
+            <div class="game-shell">
+              <div class="game-bar">
+                <span>Violet maze</span>
+                <div class="game-stats" aria-live="polite"><span>Score <strong id="maze-score">0</strong></span><span>Lives <strong id="maze-lives">3</strong></span></div>
+              </div>
+              <canvas id="violet-maze" width="560" height="400" aria-label="Playable violet Pac-Man-style maze game. Use arrow keys, WASD, or the touch controls.">Your browser does not support this game canvas.</canvas>
+              <div class="game-actions">
+                <button id="maze-toggle" type="button" class="game-button">Start game</button>
+                <span>Use arrow keys or WASD</span>
+              </div>
+              <div class="maze-controls" aria-label="Touch game controls">
+                <button type="button" data-direction="up" aria-label="Move up">↑</button>
+                <div><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block projects" id="projects">
       <div class="container">
         <div class="section-heading">
@@ -77,6 +109,7 @@
           <h2>Research and systems built to answer difficult questions.</h2>
           <p>From diagnosing Transformer extrapolation failures to modelling lethal heat and analysing the structure of the universe.</p>
         </div>
+
         <article class="featured-project">
           <div class="project-number">01 / Featured</div>
           <div class="row">
@@ -94,6 +127,7 @@
             </div>
           </div>
         </article>
+
         <div class="row project-grid">
           <div class="col-lg-6 mb-4">
             <article class="project-card">
@@ -105,6 +139,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
@@ -115,6 +150,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
@@ -125,6 +161,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
@@ -136,6 +173,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
@@ -147,6 +185,7 @@
               </div>
             </article>
           </div>
+
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
@@ -169,13 +208,13 @@
 
     <section class="section-block publication" id="publication">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow">Peer-reviewed publication</p><h2>Climate research with a human focus.</h2></div>
+        <div class="section-heading compact"><p class="eyebrow">Peer-reviewed publication</p><h2>Climate research with a human focus.</h2></div>
         <article class="publication-card">
           <div class="publication-meta"><span>2025</span><span>Cambridge Journal of Climate Research</span><span>Volume 2, Issue 1 · pp. 182–194</span></div>
           <h3>The Unequal Impact of Lethal Heatwaves in India for Males and Females: Insights from Climate Projection Data</h3>
           <p class="publication-author">Aanchala Bhongade · Single author</p>
           <p>Uses CMIP6 projections, derived climate indicators, scenario comparison, statistical analysis and scientific visualisation to examine unequal exposure to lethal heat in India.</p>
-          <a class="publication-link" href="https://api-diamond-oa.lib.cam.ac.uk/server/api/core/bitstreams/23f2fdce-666b-47fd-bbe2-6d0ada08e276/content" target="_blank" rel="noopener">Read the full publication <i class="uil uil-external-link-alt"></i></a>
+          <a class="publication-link" href="https://api-diamond-oa.lib.cam.ac.uk/server/api/core/bitstreams/23f2fdce-666b-47fd-bbe2-6d0ada08e276/content" target="_blank" rel="noopener">Read the full paper <i class="uil uil-arrow-up-right"></i></a>
         </article>
       </div>
     </section>
@@ -200,7 +239,7 @@
             <div class="timeline">
               <div class="timeline-wrapper"><div class="timeline-yr"><span>2026</span></div><div class="timeline-info"><h3><span>MSc Research Dissertation</span><small>University of Bristol · Jun–Aug 2026</small></h3><p>Completed 45 controlled multi-seed Transformer experiments and developed a failure taxonomy supported by position-wise error profiles, attention statistics, and task-specific diagnostics.</p></div></div>
               <div class="timeline-wrapper"><div class="timeline-yr"><span>2024</span></div><div class="timeline-info"><h3><span>Visiting Researcher</span><small>University of Cambridge · Sep 2024–Mar 2025</small></h3><p>Integrated CMIP6 climate and demographic projections across five SSP scenarios to analyse heat exposure and cooling-energy demand in India through 2100.</p></div></div>
-              <div class="timeline-wrapper"><div class="timeline-yr"><span>2024</span></div><div class="timeline-info"><h3><span>Scientific Computing Researcher</span><small>University of Zurich · Relic-Kappa · Jul 2024–Jan 2025</small></h3><p>Processed FITS/HEALPix weak-lensing maps across 120 configuration-redshift combinations on the UZH Science Cluster.</p></div></div>
+              <div class="timeline-wrapper"><div class="timeline-yr"><span>2024</span></div><div class="timeline-info"><h3><span>Scientific Computing Researcher</span><small>University of Zurich · Jul 2024–Jan 2025</small></h3><p>Processed FITS/HEALPix weak-lensing maps across 120 configuration-redshift combinations on the UZH Science Cluster.</p></div></div>
               <div class="timeline-wrapper"><div class="timeline-yr"><span>2023</span></div><div class="timeline-info"><h3><span>Research Intern</span><small>VJTI · Oct 2023–May 2024</small></h3><p>Applied Multiple Criteria Decision Making frameworks to evaluate EV chargers through expert consultation, manufacturing-plant visits, and literature review.</p></div></div>
             </div>
           </div>
@@ -243,8 +282,8 @@
       <div class="container">
         <div class="contact-panel">
           <div class="row align-items-center">
-            <div class="col-lg-8"><p class="eyebrow">Let’s connect</p><h2>Have a research question or an opportunity in mind?</h2><p>I’m open to data science, applied research and interdisciplinary collaborations.</p></div>
-            <div class="col-lg-4 text-lg-right"><a href="mailto:aanchalabhongade@gmail.com" class="btn custom-btn contact-btn">Email me <i class="uil uil-arrow-up-right"></i></a><div class="social-row"><a href="https://linkedin.com/in/aanchalabhongade" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/Aanchala14" target="_blank" rel="noopener">GitHub</a></div></div>
+            <div class="col-lg-8"><p class="eyebrow">Let’s connect</p><h2>Have a research question or an opportunity in mind?</h2><p>I’m open to data science, applied research and interdisciplinary collaboration roles.</p></div>
+            <div class="col-lg-4 text-lg-right"><a href="mailto:aanchalabhongade@gmail.com" class="btn custom-btn contact-btn">Email me <i class="uil uil-arrow-up-right"></i></a><div class="social-row"><a href="https://github.com/Aanchala14" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/aanchala-bhongade/" target="_blank" rel="noopener">LinkedIn</a></div></div>
           </div>
         </div>
       </div>
@@ -252,6 +291,7 @@
   </main>
 
   <footer class="footer"><div class="container"><div class="footer-row"><p>© 2026 Aanchala Bhongade</p><a href="#about">Back to top <i class="uil uil-arrow-up"></i></a></div></div></footer>
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
