@@ -33,9 +33,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a href="#about" class="nav-link"><span data-hover="About">About</span></a></li>
+          <li class="nav-item"><a href="#education" class="nav-link"><span data-hover="Education">Education</span></a></li>
           <li class="nav-item"><a href="#experience" class="nav-link"><span data-hover="Experience">Experience</span></a></li>
           <li class="nav-item"><a href="#projects" class="nav-link"><span data-hover="Projects">Projects</span></a></li>
           <li class="nav-item"><a href="#publication" class="nav-link"><span data-hover="Publication">Publication</span></a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><span data-hover="Skills">Skills</span></a></li>
           <li class="nav-item"><a href="#credentials" class="nav-link"><span data-hover="Credentials">Credentials</span></a></li>
           <li class="nav-item"><a href="#references" class="nav-link"><span data-hover="References">References</span></a></li>
           <li class="nav-item"><a href="#extras" class="nav-link"><span data-hover="Extras">Extras</span></a></li>
@@ -76,24 +78,63 @@
       </aside>
     </section>
 
+    <section class="section-block resume" id="education">
+      <div class="container">
+        <div class="section-heading compact"><p class="eyebrow">Education</p><h2>Academic background.</h2></div>
+        <div class="details-grid">
+          <article class="detail-card">
+            <div class="entry-header"><div><h3>University of Bristol</h3><p>MSc Data Science · Bristol, United Kingdom</p></div><span>Sep 2025 – Sep 2026</span></div>
+            <p><strong>Relevant coursework:</strong> Statistical Computing and Empirical Methods; Programming and Algorithms; AI and Text Analytics; Large-Scale Data Engineering; Data Science Methods and Practice; Visual Analytics.</p>
+            <h4>MSc Research Dissertation — Length Generalisation in Transformer Sequence Models</h4>
+            <a class="project-link compact-link" href="https://github.com/Aanchala14/Length-Generalisation-in-Sequence-Models-Failure-Taxonomy-and-Mitigation-Strategies.git" target="_blank" rel="noopener"><i class="uil uil-code"></i> View dissertation on GitHub</a>
+            <ul class="project-points entry-points">
+              <li>Designed and conducted 45 controlled, multi-seed experiments across three algorithmic tasks and five positional encoding methods, using PyTorch and AWS GPUs to evaluate Transformer generalisation under sequence-length distribution shifts up to 1,024 tokens.</li>
+              <li>Applied statistical evaluation across random seeds, attention statistics and position-wise error analysis to distinguish model underfitting, optimisation instability and out-of-distribution generalisation failures.</li>
+              <li>Developed a multi-seed baseline selection methodology to control for random initialisation effects, ensuring model comparisons were based on stable configurations rather than isolated experimental outcomes.</li>
+              <li>Investigated mixed-length training, curriculum learning and randomised padding, using carry-condition and dependency-distance diagnostics to analyse how sequence structure affected model performance and extrapolation.</li>
+              <li>Produced reproducible experimental results and a failure taxonomy separating training performance, seed-dependent variability and systematic generalisation errors, enabling more rigorous interpretation beyond aggregate accuracy.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <div class="entry-header"><div><h3>Veermata Jijabai Technological Institute (VJTI)</h3><p>B.Tech. Production Engineering · Mumbai, India</p></div><span>Dec 2021 – Jun 2025</span></div>
+            <ul class="project-points entry-points">
+              <li><strong>CGPA:</strong> 7.33/10 (First Class | UK 2:1 Equivalent | Ranked in Top 20% on relative curve).</li>
+              <li><strong>Relevant coursework:</strong> Applied Mathematics, Applied Probability and Statistics, Operations Research, Business Analytics, Industrial Engineering, Programming and Problem Solving.</li>
+              <li><strong>Quantitative focus:</strong> Probability distributions, statistical inference, mathematical optimisation, numerical methods, simulation, regression and decision modelling.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block resume" id="experience">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow">Background</p><h2>Experience and education.</h2></div>
-        <div class="row">
-          <div class="col-lg-7">
-            <h3 class="column-title">Experience</h3>
-            <div class="timeline">
-              <div class="timeline-wrapper"><div class="timeline-yr"><span>2026</span></div><div class="timeline-info"><h3><span>MSc Research Dissertation</span><small>University of Bristol · Jun 2026–Aug 2026</small></h3><p>Investigated length generalisation in Transformer sequence models through 45 controlled PyTorch experiments on AWS GPU infrastructure, producing a failure taxonomy and diagnostic analyses beyond aggregate accuracy.</p></div></div>
-              <div class="timeline-wrapper"><div class="timeline-yr"><span>2024</span></div><div class="timeline-info"><h3><span>Visiting Researcher</span><small>University of Cambridge · Sep 2024–Mar 2025</small></h3><p>Integrated CMIP6 climate and demographic projections across five SSP scenarios to analyse heat exposure and cooling-energy demand in India through 2100.</p></div></div>
-              <div class="timeline-wrapper"><div class="timeline-yr"><span>2024</span></div><div class="timeline-info"><h3><span>Scientific Computing Researcher</span><small>University of Zurich · Relic-Kappa · Jul 2024–Jan 2025</small></h3><p>Processed FITS/HEALPix weak-lensing maps across 120 configuration–redshift combinations on the UZH Science Cluster, comparing Newtonian and relativistic outputs.</p></div></div>
-              <div class="timeline-wrapper"><div class="timeline-yr"><span>2023</span></div><div class="timeline-info"><h3><span>Research Intern</span><small>Veermata Jijabai Technological Institute · Oct 2023–May 2024</small></h3><p>Identified the optimal EV charger using Multiple Criteria Decision Making, structuring a multi-variable evaluation in Super Decision Software alongside expert consultation, plant visits and a literature review.</p></div></div>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <h3 class="column-title">Education</h3>
-            <div class="education-card"><span>Sep 2025–Sep 2026</span><h3>MSc Data Science</h3><p>University of Bristol</p><small>Statistical computing, programming and algorithms, AI and text analytics, large-scale data engineering, data science methods and visual analytics</small></div>
-            <div class="education-card"><span>Dec 2021–Jun 2025</span><h3>BTech Production Engineering</h3><p>Veermata Jijabai Technological Institute</p><small>First Class · CGPA 7.33/10 · Probability and statistics, operations research, business analytics, C++ and supply chain management</small></div>
-          </div>
+        <div class="section-heading compact"><p class="eyebrow">Experience</p><h2>Research experience.</h2></div>
+        <div class="details-grid experience-grid">
+          <article class="detail-card">
+            <div class="entry-header"><div><h3>University of Cambridge</h3><p>Visiting Researcher · Cambridge Collective Intelligence and Design Group · Cambridge, United Kingdom</p></div><span>Sep 2024 – Mar 2025</span></div>
+            <ul class="project-points entry-points">
+              <li>Developed an end-to-end Python pipeline for quantitative modelling and multi-scenario analysis, integrating CMIP6 climate projections, demographic data and appliance-sales statistics across five SSP scenarios to model heat exposure and cooling-energy demand through 2100.</li>
+              <li>Conducted statistical and sensitivity analysis across 20 age groups, two genders and four forecast periods, evaluating scenario-dependent trends, percentile bounds, correlations and uncertainty in long-horizon projections.</li>
+              <li>Quantified changes in heat exposure under different emissions assumptions, identifying a projected heat index of approximately 89°F by 2099 under SSP5-8.5 and widening uncertainty across scenarios; findings resulted in a sole-authored, peer-reviewed publication.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <div class="entry-header"><div><h3>University of Zurich · Relic-Kappa Project</h3><p>Undergraduate Scientific Computing Researcher · Zurich, Switzerland (Remote)</p></div><span>Jul 2024 – Jan 2025</span></div>
+            <a class="project-link compact-link" href="https://gitlab.uzh.ch/julian.adamek/relic-kappa.git" target="_blank" rel="noopener"><i class="uil uil-code"></i> View project on GitLab</a>
+            <ul class="project-points entry-points">
+              <li>Analysed large-scale, noisy numerical simulation data across 120 configuration-redshift combinations (z = 0.6–2.0), evaluating four Newtonian and relativistic configurations using FITS/HEALPix weak-lensing convergence maps.</li>
+              <li>Developed Python-based numerical analysis workflows using NumPy, Astropy and Healpy/Anafast to estimate angular power spectra, transform simulation outputs and extract statistical features from high-dimensional spatial data.</li>
+              <li>Performed comparative statistical analysis using 20-bin aggregation, mean and relative differences, standard deviations and error bars to quantify deviations between physical models and assess variability across simulation runs.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <div class="entry-header"><div><h3>Veermata Jijabai Technological Institute</h3><p>Research Intern · Mumbai, India</p></div><span>Oct 2023 – May 2024</span></div>
+            <ul class="project-points entry-points">
+              <li>Applied Multi-Criteria Decision Making (MCDM) methods, including AHP, ANP and TOPSIS, to evaluate EV charging technologies through structured quantitative comparisons involving multiple technical and operational criteria.</li>
+              <li>Used Super Decisions software and industry-expert assessments to support comparative evaluation, incorporating manufacturer research, plant visits and technical literature into the decision-making framework.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -105,16 +146,16 @@
           <div class="project-number">01 / Featured</div>
           <div class="row">
             <div class="col-lg-10 project-copy">
-              <p class="project-kicker">MSc dissertation · University of Bristol</p>
-              <h3>Length generalisation in Transformer sequence models</h3>
-              <p>A configuration-driven PyTorch pipeline on AWS GPU infrastructure running 45 Transformer baselines across 3 algorithmic tasks, 5 positional encodings and 3 random seeds, evaluated at sequence lengths up to 1,024.</p>
+              <p class="project-kicker">Quantitative research · Derivatives</p>
+              <h3>RegimeLab: Volatility Forecasting &amp; Derivatives Pricing</h3>
+              <div class="tag-row"><span>Python</span><span>Statistical Modelling</span><span>Machine Learning</span><span>Monte Carlo Simulation</span></div>
               <ul class="project-points">
-                <li>Built an evidence-based failure taxonomy separating training underfitting, seed instability, immediate extrapolation collapse and position-dependent error patterns</li>
-                <li>Established a multi-seed baseline-eligibility framework, identifying 5 of 15 configurations with 92–100% mean training-length exact-match accuracy; all five reached 0% at the first tested unseen length</li>
-                <li>Diagnosed task-specific failures with position-wise error profiles, attention statistics, carry-condition and dependency-distance analysis rather than aggregate accuracy alone</li>
-                <li>Tested mixed-length training, curriculum learning and randomised padding, separating genuine underfitting from interventions that preserved training performance without improving unseen-length exact match</li>
+                <li>Built a quantitative research framework comparing GARCH, EWMA and ML-based volatility forecasts across multiple market regimes using walk-forward validation.</li>
+                <li>Developed Black-Scholes-Merton and Monte Carlo pricing engines with numerical convergence testing, implied volatility estimation and options Greeks.</li>
+                <li>Validated 100,000-path Monte Carlo estimates across call and put scenarios, achieving 0.014 absolute pricing error, approximately 24% lower estimator standard error and Greek agreement within 2.06 × 10<sup>−8</sup>.</li>
+                <li>Built a deployment-ready three-module Streamlit dashboard and a 58-test verification suite covering data quality, look-ahead leakage, forecasting models, pricing convergence, stress tests and application rendering.</li>
               </ul>
-              <div class="tag-row"><span>PyTorch</span><span>Transformers</span><span>AWS GPU</span><span>Positional encodings</span><span>Experimental design</span></div>
+              <a class="project-link" href="https://github.com/Aanchala14/regime_lab" target="_blank" rel="noopener"><i class="uil uil-code"></i> View on GitHub</a>
             </div>
           </div>
         </article>
@@ -123,41 +164,29 @@
             <article class="project-card">
               <div class="project-card-body">
                 <p class="project-kicker">Cloud engineering · AWS</p>
-                <h3>Elastic event-driven data pipeline</h3>
-                <p>Deployed an event-driven processing architecture using S3, SQS, Ubuntu EC2 workers and DynamoDB, with least-privilege IAM and queue-depth Auto Scaling through CloudWatch. A 120-file burst test scaled the fleet from one worker to two, processed the full workload without data loss and returned to minimum capacity once the queue drained.</p>
-                <div class="tag-row"><span>EC2</span><span>S3</span><span>SQS</span><span>DynamoDB</span></div>
+                <h3>Elastic Event-Driven Data Pipeline on AWS</h3>
+                <div class="tag-row"><span>Python</span><span>AWS S3</span><span>SQS</span><span>EC2</span><span>DynamoDB</span><span>IAM</span><span>CloudWatch</span></div>
+                <ul class="project-points">
+                  <li>Developed a scalable, event-driven data-processing system using S3, SQS, EC2 workers and DynamoDB, with IAM-based access controls and CloudWatch monitoring.</li>
+                  <li>Implemented queue-depth-based Auto Scaling to dynamically adjust processing capacity according to workload.</li>
+                  <li>Validated system reliability through a 120-file load test, automatically scaling workers from one to two, processing the workload without data loss and returning to minimum capacity.</li>
+                </ul>
               </div>
             </article>
           </div>
           <div class="col-lg-6 mb-4">
             <article class="project-card">
               <div class="project-card-body">
-                <p class="project-kicker">Astronomical machine learning · Ongoing</p>
-                <h3>Robust anomaly detection under instrument shift</h3>
-                <p>Developing a reproducible Kepler and TESS light-curve pipeline — quality-flag filtering, missing-data handling, detrending and normalisation — with Isolation Forest anomaly scoring and cross-quarter, cross-instrument evaluation that separates rare temporal behaviour from detector-specific distribution shift.</p>
-                <div class="tag-row"><span>Lightkurve</span><span>Astropy</span><span>scikit-learn</span><span>Time series</span></div>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <article class="project-card">
-              <div class="project-card-body">
-                <p class="project-kicker">Uncertainty research · Research proposal</p>
-                <h3>Robust prediction intervals under distribution shift</h3>
-                <p>Designed a controlled evaluation of four probabilistic forecasters with native and conformal calibration across four temporal shift types and three severity levels, scored on coverage, interval width, CRPS and Winkler score.</p>
-                <div class="tag-row"><span>Conformal calibration</span><span>CRPS</span><span>Winkler score</span><span>Distribution shift</span></div>
-                <a class="project-link" href="https://github.com/Aanchala14/How_Robust_Are_Prediction_Intervals" target="_blank" rel="noopener"><i class="uil uil-code"></i> View on GitHub</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <article class="project-card">
-              <div class="project-card-body">
-                <p class="project-kicker">Computational cosmology · University of Zurich</p>
-                <h3>Relic-Kappa weak-lensing analysis</h3>
-                <p>Developed Astropy, Healpy/Anafast and NumPy workflows across 120 configuration–redshift combinations, computing angular power spectra and comparing Newtonian and relativistic outputs with binned means, standard deviations and error bars.</p>
-                <div class="tag-row"><span>FITS</span><span>HEALPix</span><span>Healpy</span><span>HPC/SLURM</span></div>
-                <a class="project-link" href="https://gitlab.uzh.ch/julian.adamek/relic-kappa" target="_blank" rel="noopener"><i class="uil uil-code"></i> View on GitLab</a>
+                <p class="project-kicker">Socio-economic analysis · England &amp; Wales</p>
+                <h3>Heating Deprivation &amp; Health Outcomes</h3>
+                <div class="tag-row"><span>Python</span><span>SQL</span><span>pandas</span><span>scikit-learn</span><span>Bayesian Ridge</span><span>PCA</span><span>t-SNE</span><span>MDS</span><span>K-means</span><span>Tableau</span></div>
+                <ul class="project-points">
+                  <li>Used SQL and Python to join, clean and aggregate 2011 and 2021 Census datasets across 331 local authorities, applying Bayesian Ridge regression for missing-value imputation and statistical modelling.</li>
+                  <li>Identified private rental tenure as the strongest predictor of heating deprivation (standardised coefficient 1.43, 95% credible interval [1.34, 1.52]).</li>
+                  <li>Applied PCA, t-SNE, MDS and K-means clustering to 11 standardised features, identifying socio-economic patterns; the first two principal components explained 79.5% of variance.</li>
+                  <li>Developed interactive Tableau dashboards and geographic visualisations to compare heating deprivation, demographic patterns and health outcomes across census years.</li>
+                </ul>
+                <a class="project-link" href="https://github.com/Aanchala14/SOCIO-ECONOMIC-TRENDS-STUDY" target="_blank" rel="noopener"><i class="uil uil-code"></i> View on GitHub</a>
               </div>
             </article>
           </div>
@@ -182,11 +211,12 @@
       <div class="container">
         <div class="section-heading compact"><p class="eyebrow">Skills</p><h2>Technical skills.</h2></div>
         <div class="row">
-          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">01</span><h3>Programming</h3><p>Python, C++, R, SQL, Git, Linux, Jupyter, LaTeX</p></div></div>
-          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">02</span><h3>Machine learning</h3><p>PyTorch, TensorFlow, scikit-learn, Transformers, neural networks, regression, clustering, anomaly detection, time-series analysis, model evaluation, distribution shift, uncertainty quantification</p></div></div>
-          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">03</span><h3>Scientific computing</h3><p>NumPy, SciPy, pandas, Matplotlib, xarray, netCDF4, Astropy, Lightkurve, Healpy, Anafast, FITS, HEALPix</p></div></div>
-          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">04</span><h3>Cloud and infrastructure</h3><p>AWS EC2, S3, SQS, DynamoDB, IAM, CloudWatch, Auto Scaling, AWS CLI; SLURM and HPC workflows</p></div></div>
-          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">05</span><h3>Research methods</h3><p>Experimental design, statistical analysis, reproducible pipelines, ablation studies, error analysis, scientific visualisation</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">01</span><h3>Programming</h3><p>Python, SQL, C++, Git, Linux</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">02</span><h3>Machine Learning</h3><p>PyTorch, scikit-learn, Transformers, Deep Learning, Statistical Learning, Model Evaluation, Time-Series Forecasting</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">03</span><h3>Data Science &amp; Statistics</h3><p>NumPy, pandas, SciPy, statsmodels, Regression, Hypothesis Testing, Experimental Design, Monte Carlo Simulation</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">04</span><h3>Cloud &amp; Data Engineering</h3><p>AWS (EC2, S3, SQS, DynamoDB, CloudWatch), Event-Driven Pipelines, Auto Scaling, IAM</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">05</span><h3>Visualisation</h3><p>Tableau, Python data visualisation, Streamlit</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="expertise-card"><span class="card-index">06</span><h3>Mathematics &amp; Quantitative Methods</h3><p>Linear Algebra, Multivariable Calculus, Differential Equations, Probability Theory, Statistical Inference, Maximum Likelihood Estimation, Hypothesis Testing, Regression Analysis, Monte Carlo Simulation, Markov Models, Mathematical Optimisation, Linear &amp; Integer Programming, Numerical Methods, Sensitivity Analysis</p></div></div>
         </div>
         </div>
       </div>
